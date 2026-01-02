@@ -66,12 +66,12 @@
 
     <nav class="flex justify-between items-center px-6 md:px-12 py-4 glass sticky top-0 z-50">
         <div class="flex items-center gap-3">
-            <img src="logo.png" alt="Logo" class="h-8 w-auto">
+            <img src="Website logo.png" alt="Logo" class="h-8 w-auto">
             <span class="text-xl font-bold tracking-tighter">Sound<span class="accent-text">Booster</span></span>
         </div>
         <div class="hidden md:flex items-center gap-8 text-sm font-bold uppercase tracking-widest">
             <a href="#features" class="hover:accent-text transition">Features</a>
-            <a href="#gallery" class="hover:accent-text transition">Gallery</a>
+            <a href="#install" class="hover:accent-text transition">Install</a>
             <a href="#faq" class="hover:accent-text transition">F&Q</a>
             <a href="https://github.com/smokojr/SoundBooster" target="_blank" class="text-2xl hover:accent-text transition" title="View on GitHub"><i class="fa-brands fa-github"></i></a>
             <a href="#download" class="accent-bg text-white px-6 py-2 rounded-full hover:scale-105 transition">Download</a>
@@ -109,34 +109,14 @@
         </div>
     </section>
 
-    <section id="gallery" class="py-24 px-6 md:px-12 bg-zinc-950/20">
-        <div class="max-w-6xl mx-auto text-center">
-            <h2 class="text-3xl font-black mb-12 uppercase">Software <span class="accent-text">Interface</span></h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="space-y-4">
-                    <img src="ss1.png" alt="Pro View" class="rounded-2xl border border-white/10 shadow-2xl transition hover:scale-105">
-                    <p class="font-bold opacity-60">Pro View with EQ</p>
-                </div>
-                <div class="space-y-4">
-                    <img src="ss2.png" alt="Mini View" class="rounded-2xl border border-white/10 shadow-2xl transition hover:scale-105">
-                    <p class="font-bold opacity-60">Compact Mini View</p>
-                </div>
-                <div class="space-y-4">
-                    <img src="ss3.png" alt="Settings" class="rounded-2xl border border-white/10 shadow-2xl transition hover:scale-105">
-                    <p class="font-bold opacity-60">Theming & Personalization</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="install" class="py-24 px-6 md:px-12">
+    <section id="install" class="py-24 px-6 md:px-12 bg-zinc-950/20">
         <div class="max-w-5xl mx-auto">
             <h2 class="text-3xl font-black mb-16 text-center uppercase tracking-widest">How to <span class="accent-text">Install</span></h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
                 <div class="flex flex-col items-center text-center">
                     <div class="step-circle accent-bg text-white text-xl">1</div>
                     <h3 class="font-bold text-xl mb-2">Download Setup</h3>
-                    <p class="opacity-50 text-sm">Download the installer from this site or our GitHub Release.</p>
+                    <p class="opacity-50 text-sm">Download the official installer (34MB) from our GitHub Release.</p>
                 </div>
                 <div class="flex flex-col items-center text-center">
                     <div class="step-circle accent-bg text-white text-xl">2</div>
@@ -146,49 +126,30 @@
                 <div class="flex flex-col items-center text-center">
                     <div class="step-circle accent-bg text-white text-xl">3</div>
                     <h3 class="font-bold text-xl mb-2">Reboot & Boost</h3>
-                    <p class="opacity-50 text-sm">Restart your PC to activate the driver, open SoundBooster, and enjoy the music!</p>
+                    <p class="opacity-50 text-sm">Restart your PC to activate the driver, open SoundBooster, and enjoy!</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="faq" class="py-24 px-6 md:px-12 bg-zinc-950/20">
+    <section id="faq" class="py-24 px-6 md:px-12">
         <div class="max-w-3xl mx-auto">
             <h2 class="text-4xl font-black mb-12 text-center uppercase tracking-tighter">F&Q</h2>
-            
             <div class="faq-item" onclick="toggleFaq(this)">
                 <div class="faq-question">Why is it free?<i class="fa-solid fa-chevron-down faq-icon opacity-50"></i></div>
-                <div class="faq-answer">Me personally, as the developer, I always loved music but didn't like the sound of it on standard setups. Other softwares like to be greedy; I wanted to create something powerful that everyone can use for free.</div>
+                <div class="faq-answer">I wanted to create something powerful that everyone can use for free, without the greed of other paid software.</div>
             </div>
-
             <div class="faq-item" onclick="toggleFaq(this)">
-                <div class="faq-question">What is VB-CABLE and is it safe?<i class="fa-solid fa-chevron-down faq-icon opacity-50"></i></div>
-                <div class="faq-answer">VB-CABLE is a virtual audio device that works as a virtual audio cable. It is 100% safe and widely used by audio professionals. SoundBooster uses it to "catch" your system audio so it can be amplified before reaching your speakers.</div>
+                <div class="faq-question">What is VB-CABLE?<i class="fa-solid fa-chevron-down faq-icon opacity-50"></i></div>
+                <div class="faq-answer">It is a safe virtual audio device used to route and amplify your system sound with zero latency.</div>
             </div>
-
             <div class="faq-item" onclick="toggleFaq(this)">
                 <div class="faq-question">Is it safe for my speakers?<i class="fa-solid fa-chevron-down faq-icon opacity-50"></i></div>
-                <div class="faq-answer">Yes. SoundBooster includes an AI Anti-Clip engine and real-time safety warnings when you exceed 250% boost to help you avoid hardware damage.</div>
+                <div class="faq-answer">Yes. Our AI Anti-Clip engine and real-time warnings protect your hardware from damage.</div>
             </div>
-
-            <div class="faq-item" onclick="toggleFaq(this)">
-                <div class="faq-question">Does it work with all Windows apps?<i class="fa-solid fa-chevron-down faq-icon opacity-50"></i></div>
-                <div class="faq-answer">Absolutely. Once the engine is activated, it boosts all system audio, including Chrome, Spotify, YouTube, and Games.</div>
-            </div>
-
-            <div class="faq-item" onclick="toggleFaq(this)">
-                <div class="faq-question">Which OS does it support right now?<i class="fa-solid fa-chevron-down faq-icon opacity-50"></i></div>
-                <div class="faq-answer">SoundBooster currently supports Windows 10 and Windows 11 (64-bit).</div>
-            </div>
-
-            <div class="faq-item" onclick="toggleFaq(this)">
-                <div class="faq-question">Why doesn't it support macOS or Linux?<i class="fa-solid fa-chevron-down faq-icon opacity-50"></i></div>
-                <div class="faq-answer">The current audio engine and VB-CABLE integration are built specifically for the Windows Audio Architecture. While a macOS version is being considered, the priority is perfecting the Windows experience first.</div>
-            </div>
-
             <div class="faq-item" onclick="toggleFaq(this)">
                 <div class="faq-question">Is the code open source?<i class="fa-solid fa-chevron-down faq-icon opacity-50"></i></div>
-                <div class="faq-answer">Yes! You can view the entire project structure on our GitHub repository. We believe in transparency and community trust.</div>
+                <div class="faq-answer">Yes! You can view the project structure on our GitHub for 100% transparency.</div>
             </div>
         </div>
     </section>
@@ -196,20 +157,16 @@
     <section id="download" class="py-32 text-center px-4">
         <div class="max-w-xl mx-auto card p-12 rounded-[3rem]">
             <h2 class="text-4xl font-black mb-4">Start Boosting</h2>
-            <p class="opacity-50 mb-10">SoundBooster Official V1.0</p>
+            <p class="opacity-50 mb-10">Official Release V1.0 (34MB)</p>
             
-            <a href="SoundBooster SetUp.exe" class="accent-bg text-white px-12 py-5 rounded-2xl font-black text-xl inline-block hover:shadow-2xl transition">
+            <a href="https://github.com/smokojr/SoundBooster/releases/tag/v1.0" target="_blank" class="accent-bg text-white px-12 py-5 rounded-2xl font-black text-xl inline-block hover:shadow-2xl transition">
                 <i class="fa-brands fa-windows mr-2"></i> DOWNLOAD SETUP
             </a>
-
-            <p class="mt-6 text-xs opacity-40 font-mono">
-                <a href="https://github.com/smokojr/SoundBooster" target="_blank" class="hover:text-white underline decoration-dotted">View Source on GitHub</a>
-            </p>
         </div>
     </section>
 
     <footer class="py-12 text-center opacity-40 text-sm border-t border-white/5">
-        &copy; 2026 SoundBooster Official. All rights reserved to smokojr (Avihay Elbaz).
+        &copy; 2026 SoundBooster Official. Created by smokojr (Avihay Elbaz).
     </footer>
 
     <script>
