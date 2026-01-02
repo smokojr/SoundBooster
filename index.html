@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoundBooster | Official Site</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --accent: #3b8ed0;
+            --bg: #000000;
+            --text: #ffffff;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --nav-bg: rgba(255, 255, 255, 0.03);
+        }
+
+        .light-mode {
+            --bg: #ffffff;
+            --text: #1a1a1a;
+            --card-bg: rgba(0, 0, 0, 0.05);
+            --nav-bg: rgba(255, 255, 255, 0.8);
+        }
+
+        body { 
+            background-color: var(--bg); 
+            color: var(--text); 
+            font-family: 'Segoe UI', sans-serif; 
+            transition: background 0.3s, color 0.3s;
+            scroll-behavior: smooth;
+        }
+
+        .accent-text { color: var(--accent); }
+        .accent-bg { background-color: var(--accent); }
+        .glass { background: var(--nav-bg); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(128,128,128,0.1); }
+        .card { background: var(--card-bg); border: 1px solid rgba(128,128,128,0.1); transition: transform 0.3s, border-color 0.3s; }
+        .card:hover { transform: translateY(-5px); border-color: var(--accent); }
+        
+        .color-dot { width: 24px; height: 24px; border-radius: 50%; cursor: pointer; border: 2px solid transparent; transition: 0.2s; }
+        .color-dot:hover { transform: scale(1.2); }
+        
+        .faq-item { border-bottom: 1px solid rgba(128,128,128,0.1); }
+        .faq-question { cursor: pointer; padding: 20px 0; display: flex; justify-content: space-between; align-items: center; font-weight: bold; font-size: 1.1rem; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; opacity: 0.7; padding-bottom: 0; line-height: 1.6; }
+        .faq-item.active .faq-answer { max-height: 300px; padding-bottom: 20px; }
+        .faq-item.active .faq-icon { transform: rotate(180deg); }
+        .faq-icon { transition: transform 0.3s; }
+    </style>
+</head>
+<body>
+
+    <div class="fixed bottom-6 right-6 z-[100] glass p-4 rounded-2xl flex flex-col gap-4 shadow-2xl border border-white/10">
+        <div class="flex items-center justify-between gap-4">
+            <span class="text-xs font-bold uppercase opacity-60 tracking-widest">Style</span>
+            <button id="themeToggle" class="p-2 rounded-lg hover:bg-gray-500/20 transition">
+                <i id="themeIcon" class="fa-solid fa-moon"></i>
+            </button>
+        </div>
+        <div class="grid grid-cols-5 gap-2">
+            <div class="color-dot bg-[#FF0000]" onclick="setAccent('#FF0000')"></div>
+            <div class="color-dot bg-[#FF7F00]" onclick="setAccent('#FF7F00')"></div>
+            <div class="color-dot bg-[#00FF00]" onclick="setAccent('#00FF00')"></div>
+            <div class="color-dot bg-[#3b8ed0]" onclick="setAccent('#3b8ed0')"></div>
+            <div class="color-dot bg-[#9400D3]" onclick="setAccent('#9400D3')"></div>
+        </div>
+    </div>
+
+    <nav class="flex justify-between items-center px-6 md:px-12 py-4 glass sticky top-0 z-50">
+        <div class="flex items-center gap-3">
+            <img src="logo.png" alt="Logo" class="h-8 w-auto">
+            <span class="text-xl font-bold tracking-tighter">Sound<span class="accent-text">Booster</span></span>
+        </div>
+        <div class="hidden md:flex gap-8 text-sm font-bold uppercase tracking-widest">
+            <a href="#about" class="hover:accent-text transition">About</a>
+            <a href="#features" class="hover:accent-text transition">Features</a>
+            <a href="#faq" class="hover:accent-text transition">F&Q</a>
+            <a href="#download" class="hover:accent-text transition">Download</a>
+        </div>
+    </nav>
+
+    <section class="min-h-[60vh] flex flex-col items-center justify-center text-center px-4">
+        <h1 class="text-5xl md:text-8xl font-black mb-6 uppercase tracking-tighter">SOUND<span class="accent-text">BOOSTER</span></h1>
+        <p class="opacity-60 text-lg md:text-xl max-w-xl mb-10">
+            Unleash the full potential of your audio system with V1.0.
+        </p>
+        <a href="#download" class="accent-bg text-white px-10 py-4 rounded-full font-black text-lg hover:scale-105 transition shadow-xl shadow-blue-500/20">
+            DOWNLOAD NOW
+        </a>
+    </section>
+
+    <section id="features" class="py-24 px-6 md:px-12">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="card p-8 rounded-3xl text-center">
+                <i class="fa-solid fa-gauge-high accent-text text-4xl mb-6"></i>
+                <h3 class="text-xl font-bold mb-3">600% Boost</h3>
+                <p class="text-sm opacity-60">Push your volume far beyond standard Windows limitations.</p>
+            </div>
+            <div class="card p-8 rounded-3xl text-center">
+                <i class="fa-solid fa-microchip accent-text text-4xl mb-6"></i>
+                <h3 class="text-xl font-bold mb-3">AI EQ</h3>
+                <p class="text-sm opacity-60">Smart frequencies adjustment to maintain sound clarity.</p>
+            </div>
+            <div class="card p-8 rounded-3xl text-center">
+                <i class="fa-solid fa-shield-halved accent-text text-4xl mb-6"></i>
+                <h3 class="text-xl font-bold mb-3">Safe Guard</h3>
+                <p class="text-sm opacity-60">Active monitoring to prevent potential driver damage.</p>
+            </div>
+            <div class="card p-8 rounded-3xl text-center">
+                <i class="fa-solid fa-bolt accent-text text-4xl mb-6"></i>
+                <h3 class="text-xl font-bold mb-3">Direct Drive</h3>
+                <p class="text-sm opacity-60">Zero-latency audio routing via virtual engine.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 px-6 md:px-12 bg-zinc-950/20">
+        <div class="max-w-4xl mx-auto card p-10 rounded-3xl">
+            <h2 class="text-2xl font-black mb-6 accent-text uppercase tracking-widest">About SoundBooster</h2>
+            <div class="opacity-80 leading-relaxed space-y-6 text-lg">
+                <p>SoundBooster is a lightweight Windows audio utility designed to safely increase system volume beyond standard limits while maintaining sound clarity and stability.
+
+It works by routing audio through a virtual audio engine, allowing controlled volume amplification with built-in protection against distortion, clipping, and potential driver damage. SoundBooster includes smart safety warnings, an AI-assisted equalizer for improved sound quality at high boost levels, and a clean, intuitive interface.
+
+The software features both Pro View and Mini View, runs quietly in the background, and remembers user preferences such as window size, theme, and audio settings. Installation and uninstallation are fully automated, including required audio drivers, ensuring a clean system experience.
+
+SoundBooster was built with a focus on power, safety, and simplicity — giving users full control without unnecessary complexity.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-24 px-6 md:px-12">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-4xl font-black mb-12 text-center uppercase tracking-tighter">Frequently Asked <span class="accent-text">Questions</span></h2>
+            
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">Why is it free?<i class="fa-solid fa-chevron-down faq-icon opacity-50"></i></div>
+                <div class="faq-answer">Me personally, as the developer, I always loved music but didn't like the sound of it on standard setups. Other softwares like to be greedy with high prices; I wanted to create something powerful that everyone can use for free.</div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">What is VB-CABLE and is it safe?<i class="fa-solid fa-chevron-down faq-icon opacity-50"></i></div>
+                <div class="faq-answer">VB-CABLE is a virtual audio device that works as a virtual audio cable. It is 100% safe and widely used by audio professionals. SoundBooster uses it to "catch" your system audio so it can be amplified before reaching your speakers.</div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">Is it safe for my speakers?<i class="fa-solid fa-chevron-down faq-icon opacity-50"></i></div>
+                <div class="faq-answer">Yes. SoundBooster includes an AI Anti-Clip engine and real-time safety warnings when you exceed 250% boost to help you avoid hardware damage.</div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">Does it work with all Windows apps?<i class="fa-solid fa-chevron-down faq-icon opacity-50"></i></div>
+                <div class="faq-answer">Absolutely. Once the engine is activated, it boosts all system audio, including Chrome, Spotify, YouTube, and Games.</div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">Which OS does it support right now?<i class="fa-solid fa-chevron-down faq-icon opacity-50"></i></div>
+                <div class="faq-answer">SoundBooster currently supports Windows 10 and Windows 11 (64-bit).</div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">Why doesn't it support macOS or Linux?<i class="fa-solid fa-chevron-down faq-icon opacity-50"></i></div>
+                <div class="faq-answer">The current audio engine and VB-CABLE integration are built specifically for the Windows Audio Architecture. While a macOS version is being considered, the priority is perfecting the Windows experience first.</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="download" class="py-32 text-center px-4">
+        <div class="max-w-xl mx-auto card p-12 rounded-[3rem]">
+            <h2 class="text-4xl font-black mb-4">Ready to Boost?</h2>
+            <p class="opacity-50 mb-10">Get the official V1.0 installer.</p>
+            <a href="SoundBooster SetUp.exe" class="accent-bg text-white px-12 py-5 rounded-2xl font-black text-xl inline-block hover:shadow-2xl transition">
+                DOWNLOAD V1.0
+            </a>
+        </div>
+    </section>
+
+    <footer class="py-12 text-center opacity-40 text-sm border-t border-white/5">
+        &copy; 2026 SoundBooster Official. All rights reserved to smokojr (Avihay Elbaz).
+    </footer>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            themeIcon.className = document.body.classList.contains('light-mode') ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+        });
+
+        // Accent Color
+        function setAccent(color) {
+            document.documentElement.style.setProperty('--accent', color);
+            localStorage.setItem('userAccent', color);
+        }
+        const savedColor = localStorage.getItem('userAccent');
+        if (savedColor) setAccent(savedColor);
+
+        // FAQ Toggle Logic
+        function toggleFaq(element) {
+            const items = document.querySelectorAll('.faq-item');
+            items.forEach(item => {
+                if (item !== element) item.classList.remove('active');
+            });
+            element.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
